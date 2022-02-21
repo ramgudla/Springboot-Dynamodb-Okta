@@ -1,0 +1,150 @@
+{
+   "info":{
+      "_postman_id":"0c0605de-5e40-4371-9361-483442e4a059",
+      "name":"springboot-dynamodb",
+      "schema":"https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+   },
+   "item":[
+      {
+         "name":"get-all-books",
+         "request":{
+            "method":"GET",
+            "header":[
+               
+            ],
+            "url":{
+               "raw":"http://localhost:9500/api/books",
+               "protocol":"http",
+               "host":[
+                  "localhost"
+               ],
+               "port":"9500",
+               "path":[
+                  "api",
+                  "books"
+               ]
+            }
+         },
+         "response":[
+            
+         ]
+      },
+      {
+         "name":"get-book-by-id",
+         "request":{
+            "method":"GET",
+            "header":[
+               
+            ],
+            "url":{
+               "raw":"http://localhost:9500/api/book/6fbdc3cb-2935-40da-8891-54f8e77e5c1d",
+               "protocol":"http",
+               "host":[
+                  "localhost"
+               ],
+               "port":"9500",
+               "path":[
+                  "api",
+                  "book",
+                  "6fbdc3cb-2935-40da-8891-54f8e77e5c1d"
+               ]
+            }
+         },
+         "response":[
+            
+         ]
+      },
+      {
+         "name":"delete-book-by-id",
+         "request":{
+            "method":"DELETE",
+            "header":[
+               
+            ],
+            "url":{
+               "raw":"http://localhost:9500/api/book/723191f0-41b6-4e3c-a156-cc98d2dec202",
+               "protocol":"http",
+               "host":[
+                  "localhost"
+               ],
+               "port":"9500",
+               "path":[
+                  "api",
+                  "book",
+                  "723191f0-41b6-4e3c-a156-cc98d2dec202"
+               ]
+            }
+         },
+         "response":[
+            
+         ]
+      },
+      {
+         "name":"save-new-book",
+         "request":{
+            "method":"POST",
+            "header":[
+               
+            ],
+            "body":{
+               "mode":"raw",
+               "raw":"{\r\n    \"author\": \"Vasdev Mohi\",\r\n    \"genre\": \"Ghazals\",\r\n    \"publisher\": \"Central Sahitya Akademi\",\r\n    \"title\": \"Cheque book\",\r\n    \"quantity\": 5\r\n}",
+               "options":{
+                  "raw":{
+                     "language":"json"
+                  }
+               }
+            },
+            "url":{
+               "raw":"http://localhost:9500/api/book",
+               "protocol":"http",
+               "host":[
+                  "localhost"
+               ],
+               "port":"9500",
+               "path":[
+                  "api",
+                  "book"
+               ]
+            }
+         },
+         "response":[
+            
+         ]
+      },
+      {
+         "name":"update-existing-book",
+         "request":{
+            "method":"PUT",
+            "header":[
+               
+            ],
+            "body":{
+               "mode":"raw",
+               "raw":"{\r\n    \"author\": \"J. K. Rowling\",\r\n    \"genre\": \"Fantasy Fiction\",\r\n    \"publisher\": \"Bloomsbury Publishing\",\r\n    \"title\": \"Harry Potter\",\r\n    \"quantity\": 100\r\n}",
+               "options":{
+                  "raw":{
+                     "language":"json"
+                  }
+               }
+            },
+            "url":{
+               "raw":"http://localhost:9500/api/book/0cbae4a2-3464-40d2-9e56-8ea3134e00e6",
+               "protocol":"http",
+               "host":[
+                  "localhost"
+               ],
+               "port":"9500",
+               "path":[
+                  "api",
+                  "book",
+                  "0cbae4a2-3464-40d2-9e56-8ea3134e00e6"
+               ]
+            }
+         },
+         "response":[
+            
+         ]
+      }
+   ]
+}

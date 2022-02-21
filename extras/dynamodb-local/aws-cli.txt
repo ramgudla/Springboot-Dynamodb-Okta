@@ -1,0 +1,8 @@
+-- optional -- either you can use the aws cli to create a table or you can use the dynamodb-local gui
+
+-- once the dynamodb-local is started successfully on docker, we will need to create a dynamodb table
+-- to create a dynamodb table we will need to install the aws cli (https://aws.amazon.com/cli/) first on the localhost machine
+
+1. navigate to the "dynamodb-local" directory
+2. execute the below command from the same path - 
+		aws dynamodb create-table --cli-input-json file://create-table.json --endpoint-url http://localhost:8000 --region us-east-1

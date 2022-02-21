@@ -1,0 +1,82 @@
+[
+   {
+      "id":"6fbdc3cb-2935-40da-8891-54f8e77e5c1d",
+      "title":"The Green Bay Tree",
+      "author":"Kennith Runolfsdottir",
+      "genre":"Mystery",
+      "publisher":"Gay Men's Press",
+      "quantity":7
+   },
+   {
+      "id":"1bebdbcd-09b3-4437-a1c7-da51427751b5",
+      "title":"The Far-Distant Oxus",
+      "author":"Freda Keeling",
+      "genre":"Essay",
+      "publisher":"Ignatius Press",
+      "quantity":2
+   },
+   {
+      "id":"5d5805dd-25d0-419d-8fb5-60bb2033cb70",
+      "title":"The Way Through the Woods",
+      "author":"Kory Hand Sr.",
+      "genre":"Metafiction",
+      "publisher":"Earthscan",
+      "quantity":2
+   },
+   {
+      "id":"0cbae4a2-3464-40d2-9e56-8ea3134e00e6",
+      "title":"Harry Potter",
+      "author":"J. K. Rowling",
+      "genre":"Fantasy Fiction",
+      "publisher":"Bloomsbury Publishing",
+      "quantity":100
+   },
+   {
+      "id":"bc5d2038-1b85-496d-be89-9cbc63f779b0",
+      "title":"Cheque book",
+      "author":"Vasdev Mohi",
+      "genre":"Ghazals",
+      "publisher":"Central Sahitya Akademi",
+      "quantity":5
+   },
+   {
+      "id":"2cc38f23-6851-4b77-b27f-2a1dc355ebae",
+      "title":"Of Mice and Men",
+      "author":"Ernest Franecki",
+      "genre":"Short story",
+      "publisher":"Etruscan Press",
+      "quantity":1
+   },
+   {
+      "id":"17c19f13-0d59-433d-90d7-43961c14815b",
+      "title":"Brandy of the Damned",
+      "author":"Sha Blanda",
+      "genre":"Reference book",
+      "publisher":"André Deutsch",
+      "quantity":5
+   },
+   {
+      "id":"38ad34b9-0f20-4b21-adcc-f4d88b2071d1",
+      "title":"Taming a Sea Horse",
+      "author":"Lurline Marks",
+      "genre":"Classic",
+      "publisher":"Faber and Faber",
+      "quantity":1
+   },
+   {
+      "id":"d9c1a91f-7ba2-41ac-a62e-caffceb62488",
+      "title":"The Wind's Twelve Quarters",
+      "author":"Frederick Steuber",
+      "genre":"Speech",
+      "publisher":"Bison Books",
+      "quantity":3
+   },
+   {
+      "id":"f4d79f8c-9712-43fd-945c-9d459538f33d",
+      "title":"Vanity Fair",
+      "author":"Miss Duncan Hodkiewicz",
+      "genre":"Essay",
+      "publisher":"Random House",
+      "quantity":1
+   }
+]

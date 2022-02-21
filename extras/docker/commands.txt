@@ -1,0 +1,12 @@
+-- docker commands to run local dynamodb --
+-- 1. to bring up the container --
+docker-compose -f <path_to_file>/docker-compose.yml up -d
+
+-- 2. to bring down the container --
+docker-compose -f <path_to_file>/docker-compose.yml stop
+
+-- 3. to remove the container --
+docker-compose -f <path_to_file>/docker-compose.yml rm -f
+
+-- 4. to check if the container is successfully started or not --
+docker ps -a

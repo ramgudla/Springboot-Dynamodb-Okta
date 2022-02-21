@@ -1,0 +1,3 @@
+-- dynamodb-local admin gui url --
+-- you can use this url to create the dynamodb tables --
+http://localhost:8000/
