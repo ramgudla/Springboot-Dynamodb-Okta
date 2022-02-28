@@ -2,6 +2,7 @@ okta:
   client:
     orgUrl: 'https://dev-83028594.okta.com'
     token: 002PJLQnpYqI7ORdneY4o14zQVPSiXnTHXMkZXFymT
+    enabled: false
 amazon:
   aws:
     accesskey: key

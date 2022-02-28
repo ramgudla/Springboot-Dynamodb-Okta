@@ -3,6 +3,9 @@ package com.springboot.dynamodb.entity;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey;
 
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode(exclude = {"domain", "userId"})
 public class IdentityDomainUserId {
 	
 	public IdentityDomainUserId() {

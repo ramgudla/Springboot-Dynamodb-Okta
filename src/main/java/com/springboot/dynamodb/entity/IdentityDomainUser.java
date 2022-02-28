@@ -19,7 +19,7 @@ public class IdentityDomainUser {
 
 	public IdentityDomainUser() {}
     
-    public IdentityDomainUser(IdentityDomainUserId domainUserId2) {this.identityDomainUserId = domainUserId2;}
+    public IdentityDomainUser(IdentityDomainUserId domainUserId) {this.identityDomainUserId = domainUserId;}
     
 	@DynamoDBHashKey(attributeName = "domain")
 	@DynamoDBIndexHashKey(globalSecondaryIndexName = "identityDomainIndex")

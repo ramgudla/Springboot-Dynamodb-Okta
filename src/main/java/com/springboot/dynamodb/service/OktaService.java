@@ -2,6 +2,8 @@ package com.springboot.dynamodb.service;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +12,9 @@ import com.okta.sdk.client.AuthorizationMode;
 import com.okta.sdk.client.Client;
 import com.okta.sdk.client.Clients;
 import com.okta.sdk.resource.user.User;
+import com.springboot.dynamodb.user.domain.AccountLink;
+import com.springboot.dynamodb.user.domain.Profile;
+import com.springboot.dynamodb.user.domain.SocialMediaLink;
 
 @Service
 public class OktaService {
@@ -35,5 +40,25 @@ public class OktaService {
     	
     	return client2.getUser(userId);
     }
+
+	public Optional<Profile> extractProfile(User user) {
+		return null;
+	}
+	
+	public List<String> extractEmails(User user) {
+		return null;
+	}
+
+	public List<AccountLink> extractAccountLinks(User user) {
+		return null;
+	}
+
+	public List<SocialMediaLink> extractSocialMediaLinks(User user) {
+		return null;
+	}
+
+	public com.springboot.dynamodb.user.domain.User extractIdentityUser(User user) {
+		return null;
+	}
     
 }

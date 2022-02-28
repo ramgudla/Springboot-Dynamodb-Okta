@@ -1,5 +1,7 @@
 package com.springboot.dynamodb.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,14 +22,19 @@ import com.springboot.dynamodb.user.domain.UserResourceV2;
 @RestController
 public class UserController {
 
-    @Autowired
+    public UserController(Optional<UserResourceBuilder> userResourceBuilder) {
+		super();
+		this.userResourceBuilder = userResourceBuilder.orElse(null);
+	}
+
+	@Autowired
     public Client client;
     
     @Autowired
     OktaService service;
     
-    @Autowired
-    UserResourceBuilder userResourdeBuilder;
+    //@Autowired
+    UserResourceBuilder userResourceBuilder;
     
     @GetMapping("/users")
     public UserList getUsers() {
@@ -37,21 +44,6 @@ public class UserController {
     @GetMapping("/user")
     public UserList searchUserByEmail(@RequestParam String query) {
         return client.listUsers(query, null, null, null, null);
-    }
-    
-    @GetMapping("/{domain}/{userId}")
-    public ResponseEntity<UserResource> getDomainUser(@PathVariable String domain, @PathVariable String userId) {
-    	return userResourdeBuilder.getUserResource(domain, userId);
-    }
-    
-    @GetMapping("/{userId}")
-    public ResponseEntity<UserResource> getUser(@PathVariable String userId) {
-    	return userResourdeBuilder.getUserResource(userId, false, false);
-    }
-    
-    @GetMapping("/v2/{userId}")
-    public ResponseEntity<UserResourceV2> getUserV2(@PathVariable String userId) {
-    	return userResourdeBuilder.getUserResourceV2(userId);
     }
     
     @GetMapping("/createUser")
@@ -69,6 +61,30 @@ public class UserController {
         String customProp = userProfile.getString("test");
         System.out.println(customProp);
         return user;
+    }
+    
+    @GetMapping("/{domain}/{userId}")
+    public ResponseEntity<UserResource> getDomainUser(@PathVariable String domain, @PathVariable String userId) {
+    	if (null != userResourceBuilder) {
+    		return userResourceBuilder.getUserResource(domain, userId, false, false);
+    	}
+    	return ResponseEntity.ok().body(new UserResource());
+    }
+    
+    @GetMapping("/{userId}")
+    public ResponseEntity<UserResource> getUser(@PathVariable String userId) {
+    	if (null != userResourceBuilder) {
+    		return userResourceBuilder.getUserResource(userId, false, false);
+    	}
+    	return ResponseEntity.ok().body(new UserResource());
+    }
+    
+    @GetMapping("/v2/{userId}")
+    public ResponseEntity<UserResourceV2> getUserV2(@PathVariable String userId) {
+    	if (null != userResourceBuilder) {
+    		return userResourceBuilder.getUserResourceV2(userId);
+    	}
+    	return ResponseEntity.ok().body(new UserResourceV2());
     }
     
 }
