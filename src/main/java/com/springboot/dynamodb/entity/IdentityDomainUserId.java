@@ -5,7 +5,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey;
 
 import lombok.EqualsAndHashCode;
 
-@EqualsAndHashCode(exclude = {"domain", "userId"})
+@EqualsAndHashCode
 public class IdentityDomainUserId {
 	
 	public IdentityDomainUserId() {
