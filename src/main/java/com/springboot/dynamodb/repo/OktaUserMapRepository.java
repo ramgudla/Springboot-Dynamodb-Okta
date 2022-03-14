@@ -4,8 +4,8 @@ import org.socialsignin.spring.data.dynamodb.repository.EnableScan;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.springboot.dynamodb.entity.DomainUser;
-import com.springboot.dynamodb.entity.DomainUserId;
+import com.springboot.dynamodb.entity.OktaUserMap;
+import com.springboot.dynamodb.entity.UserId;
 
 
 // https://examples.javacodegeeks.com/spring-boot-crud-with-aws-dynamodb/
@@ -20,6 +20,6 @@ import com.springboot.dynamodb.entity.DomainUserId;
 @EnableScan
 //spring annotation
 @Repository
-public interface DomainUserRepository extends CrudRepository<DomainUser, DomainUserId> {
+public interface OktaUserMapRepository extends CrudRepository<OktaUserMap, UserId> { 
     
 }

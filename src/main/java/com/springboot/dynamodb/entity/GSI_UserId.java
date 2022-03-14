@@ -3,19 +3,31 @@ package com.springboot.dynamodb.entity;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey;
 
-public class DomainUserId {
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode
+public class GSI_UserId {
+
+	private String userId;
+	private String domain;
 	
-	public DomainUserId() {
+	public GSI_UserId() {
 	}
 	
-	public DomainUserId(String domain, String userId) {
+	public GSI_UserId(String userId, String domain) {
+		this.userId = userId;
 		this.domain = domain;
+	}
+	
+	@DynamoDBHashKey
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	private String domain;
-    private String userId;
 	
-    @DynamoDBHashKey
+    @DynamoDBRangeKey
 	public String getDomain() {
 		return domain;
 	}
@@ -23,11 +35,4 @@ public class DomainUserId {
 		this.domain = domain;
 	}
 	
-	@DynamoDBRangeKey
-	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
 }

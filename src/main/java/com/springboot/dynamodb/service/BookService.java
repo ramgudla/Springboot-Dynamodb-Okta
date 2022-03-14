@@ -4,11 +4,11 @@ import com.okta.sdk.client.Client;
 import com.okta.sdk.resource.user.User;
 import com.springboot.dynamodb.entity.Book;
 import com.springboot.dynamodb.entity.BookDto;
-import com.springboot.dynamodb.entity.DomainUserId;
-import com.springboot.dynamodb.entity.IdentityDomainUserId;
+import com.springboot.dynamodb.entity.UserId;
+import com.springboot.dynamodb.entity.GSI_UserId;
 import com.springboot.dynamodb.exception.EntityNotFound;
-import com.springboot.dynamodb.repo.DomainUserRepository;
-import com.springboot.dynamodb.repo.IdentityDomainUserRepository;
+import com.springboot.dynamodb.repo.OktaUserMapRepository;
+import com.springboot.dynamodb.repo.GSI_OktaUserMapRepository;
 import com.springboot.dynamodb.repo.BookRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +25,10 @@ public class BookService {
     BookRepository repository;
     
     @Autowired
-    DomainUserRepository domainUserRepository;
+    OktaUserMapRepository domainUserRepository;
     
     @Autowired
-    IdentityDomainUserRepository identityDomainUserRepository;
+    GSI_OktaUserMapRepository identityDomainUserRepository;
     
     @Autowired
     public Client client;
@@ -79,7 +79,7 @@ public class BookService {
     }
     
     public String getOktaUserId(String domain, String userId) {
-    	DomainUserId domainUserId = new DomainUserId(domain, userId);
+    	UserId domainUserId = new UserId(domain, userId);
     	String oktaUserId = domainUserRepository.findById(domainUserId).get().getOktaUserId();
     	return oktaUserId;
     }
@@ -94,7 +94,7 @@ public class BookService {
     }
     
     private String getOktaUserIdGSI(String domain, String userId) {
-    	IdentityDomainUserId identityDomainUserId = new IdentityDomainUserId(domain, userId);
+    	GSI_UserId identityDomainUserId = new GSI_UserId(domain, userId);
     	String oktaUserId = identityDomainUserRepository.findById(identityDomainUserId).get().getOktaUserId();
     	return oktaUserId;
     }

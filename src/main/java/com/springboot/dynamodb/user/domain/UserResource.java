@@ -2,8 +2,6 @@ package com.springboot.dynamodb.user.domain;
 
 import java.util.List;
 
-import org.springframework.hateoas.Link;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,12 +16,13 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserResource {
+	User user;
 	Profile userProfile;
 	List<String> emails;
 	List<AccountLink> accountLinks;
     List<SocialMediaLink> socialMediaLinks;
+    public UserResource(User identityUser) {
+		this.user = identityUser;
+	}
     
-    public UserResource(User user, Link... link) {
-    	
-    }
 }
