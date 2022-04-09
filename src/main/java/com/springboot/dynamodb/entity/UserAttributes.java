@@ -1,7 +1,6 @@
-package com.springboot.dynamodb.user.domain;
+package com.springboot.dynamodb.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.springboot.dynamodb.entity.UserAttributes;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,8 +16,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class User {
-	
+public class UserAttributes {
 	private String status;
 	private boolean locked;
 	private boolean closed;
@@ -29,9 +27,4 @@ public class User {
 	private String salt;
 	private String domain;
 	private String region;
-
-	public String getUserId() {
-		return null;
-	}
-
 }
